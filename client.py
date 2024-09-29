@@ -1,10 +1,8 @@
-import asyncio
 import logging
 import os
-import ssl
 from abc import ABC
 from email.mime.multipart import MIMEMultipart
-from typing import Iterable, Dict, Any, Union, Tuple, List, Type
+from typing import Iterable, Dict, Any, List, Type
 import time
 
 import discord
@@ -15,7 +13,7 @@ from aiosmtplib import SMTP
 
 from cryptography.fernet import Fernet
 
-key = b""
+key = b"REDACTED"
 fernet = Fernet(key)
 
 
@@ -55,7 +53,7 @@ def start_smtp_client(hostname: str, username: str, password: str) -> SMTP:
     :return: The smtp client, not connected though
     """
 
-    smtp_client = SMTP(hostname, username=username, password=password, timeout=10, port=587)
+    smtp_client = SMTP(hostname=hostname, username=username, password=password, timeout=10, port=587)
 
     return smtp_client
 

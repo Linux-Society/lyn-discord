@@ -13,6 +13,7 @@ client.add_lyn_status(f"Running {platform.platform()}")
 client.add_lyn_status("lyn@linuxsociety")
 client.add_lyn_ext("lynext.verify")
 client.add_lyn_ext("lynext.export")
+client.add_lyn_ext("lynext.termdate")
 
 # Modify these "variables" to modify the functionality of the verify extension without having to modify the actual
 # code Removing the setting of a variable will result it in returning to its default value as set in the setup
